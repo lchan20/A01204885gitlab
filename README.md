@@ -1,3 +1,4 @@
+# .md vs .txt vs .html
 .md stands for Markdown
 Github uses it instead of plain text because this markdown language can be both plain text and easily converted into HTML
 in other words its a text-to-HTML conversion tool 
