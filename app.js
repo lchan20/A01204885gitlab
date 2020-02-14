@@ -1,9 +1,29 @@
 // I added this comment for the gitlab
 
 // Add DOM selectors to target input and UL movie list
-var inp = document.querySelector("input");
-var myMovieList = document.querySelector("ul");
-var mList = {};
+let inp = document.querySelector("input");
+let myMovieList = document.querySelector("ul");
+let mList = {};
+
+
+
+
+
+// first step geet the movie history elenebt
+const movieHistory = document.querySelector("#movieHistoryCard");
+
+// database to hold onto movie history (in-memory database)
+const myMovies = {}; // this is an object literal
+
+// first thing code should check is if there is any info in the database
+// not going to do this step yet so making a to do
+//to do: check our batabase (myMovies) to see if there are movies in there
+
+
+
+
+
+
 
 
 
@@ -19,7 +39,7 @@ function clearMovies() {
 
 // This function is executed when the user clicks [ADD MOVIE] button.
 function addMovie() {
-    var row = document.createElement("tr");
+    let row = document.createElement("tr");
 
     if ([inp.value] in mList){
         //adds counter to the table
@@ -32,12 +52,12 @@ function addMovie() {
   
 
         // Step 1: Get value of input
-        var userTypedText = inp.value;
+        let userTypedText = inp.value;
         // Step 2: Create an empty <li></li>
-        var li = document.createElement("li"); // <li></li>
+        let li = document.createElement("li"); // <li></li>
 
         // Step 3: Prepare the text we will insert INTO that li ^...example: Harry Potter
-        var textToInsert = document.createTextNode(userTypedText);
+        let textToInsert = document.createTextNode(userTypedText);
 
         // Step 4: Insert text into li
         // <li>Harry Potter </li>
@@ -48,9 +68,9 @@ function addMovie() {
 
         // Step 6: Call the clearInput function to clear the input field
         // clearInput();
-        var movieTable = document.getElementById("movieTable");
+        let movieTable = document.getElementById("movieTable");
 
-        var tableBody = document.createElement("tbody");
+        let tableBody = document.createElement("tbody");
 
         //empty array to push list for tabulating
         mList[inp.value] = 1;
@@ -72,15 +92,15 @@ function addMovie() {
 }
 
   //add table and table body
-  var table = document.createElement("TABLE");
+  let table = document.createElement("TABLE");
   table.setAttribute("id", "tbl");
   document.getElementById("movieTable").appendChild(table);
 
   // header for table
-  var h1 = document.createElement("th");
+  let h1 = document.createElement("th");
   h1.innerHTML = "<b> Movie Name </b>"
   document.getElementById("tbl").appendChild(h1);
-  var h2 = document.createElement("th");
+  let h2 = document.createElement("th");
   h2.innerHTML = "<b> Times Watched </b>"
   document.getElementById("tbl").appendChild(h2);
 
